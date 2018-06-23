@@ -1,0 +1,162 @@
+\section{Written Questions}
+\label{sec:written}
+
+Write your solutions to the HW2 Written Questions in this template. You may either enter your solutions into the .tex file directly, or print out the pdf version and write your solutions by hand in the boxes provided.  When you have completed all of the written questions, you should upload your solutions to Gradescope in pdf format.
+
+\subsection{Warm-up}
+\label{sec:warmup}
+
+First, let's think a little bit about decision trees. The following dataset consists of 7 examples, each with 3 attributes, $(A,B,C)$, and a label, $Y$.
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+$A$ & $B$ & $C$ & $Y$ \\ \hline
+1 & 1 & 0 & 0     \\ \hline
+1 & 1 & 2 & 1     \\ \hline
+1 & 0 & 0 & 1     \\ \hline
+1 & 1 & 2 & 1     \\ \hline
+0 & 0 & 2 & 0     \\ \hline
+0 & 1 & 1 & 0     \\ \hline
+0 & 0 & 0 & 0     \\ \hline
+\end{tabular}
+\end{center}
+
+
+Use the data above to answer the following questions. 
+
+\begin{notebox}
+A few important notes:
+\begin{itemize}
+    \item \emph{All calculations should be done without rounding!} After you have finished all of your calculations, write your rounded solutions in the boxes below.
+    %\item Unless otherwise noted, numeric solutions should include 4 digits of precision (e.g. 0.1234).
+    \item Note that, throughout this homework, we will use the convention that the leaves of the trees do not count as nodes, and as such are not included in calculations of depth and number of splits. (For example, a tree which classifies the data based on the value of a single attribute will have depth 1, and contain 1 split.)
+\end{itemize}
+\end{notebox}
+
+\begin{enumerate}
+    \item What is the entropy of $Y$ in bits, $H(Y)$? In this and subsequent questions, when we request the units in \emph{bits}, this simply means that you need to use $\log$ base 2 in your calculations.\footnote{If instead you used $\log$ base $e$, the units would be \emph{nats}; $\log$ base 10 gives \emph{bats}.}
+    %
+    (Please include one number rounded to the fourth decimal place, e.g. 0.1234)
+    
+    \begin{tcolorbox}[fit,height=2cm,blank, borderline={1pt}{-2pt},nobeforeafter]
+    %Input your solution here.  Do not change any of the specifications of this solution box.
+    \end{tcolorbox}
+    
+
+    \item What is the mutual information\footnote{In the context of decision trees, and therefore in this assignment, the terms ``information gain" and ``mutual information" are synonymous (e.g. they have the same meaning as one another). However, in information theory and machine learning in general, ``information gain" is synonymous with ``Kullback-Leibler (K-L) divergence", often referred to as relative entropy, which is not the same as mutual information. For more information, go \href{https://en.wikipedia.org/wiki/Information_gain_in_decision_trees}{here.} } 
+    of $Y$ and $A$ in bits, $I(Y; A)$?
+    %
+    (Please include one number rounded to the fourth decimal place, e.g. 0.1234)
+    
+    \begin{tcolorbox}[fit,height=2cm,blank, borderline={1pt}{-2pt},nobeforeafter]
+    %Input your solution here.  Do not change any of the specifications of this solution box.
+    \end{tcolorbox}
+    
+    \item What is the mutual information of $Y$ and $B$ in bits, $I(Y; B)$?
+    %
+    (Please include one number rounded to the fourth decimal place, e.g. 0.1234)
+
+    \begin{tcolorbox}[fit,height=2cm,blank, borderline={1pt}{-2pt},nobeforeafter]
+    %Input your solution here.  Do not change any of the specifications of this solution box.
+    \end{tcolorbox}
+    
+    \item What is the mutual information of $Y$ and $B$ in bits, $I(Y; C)$?
+    %
+    (Please include one number rounded to the fourth decimal place, e.g. 0.1234)
+    
+    \begin{tcolorbox}[fit,height=2cm,blank, borderline={1pt}{-2pt},nobeforeafter]
+    %Input your solution here.  Do not change any of the specifications of this solution box.
+    \end{tcolorbox}
+    
+    \item Consider the dataset given above. Which attribute ($A$, $B$, or $C$) would a decision tree algorithm pick first to branch on, if its splitting criterion is mutual information?
+    
+    \begin{tcolorbox}[fit,height=2cm,blank, borderline={1pt}{-2pt},nobeforeafter]
+    %Input your solution here.  Do not change any of the specifications of this solution box.
+    \end{tcolorbox}
+    
+    \item Consider the dataset given above. Which is the second attribute you would pick to branch on, if its splitting criterion is mutual information? (\emph{Hint:} Notice that this question correctly presupposes that there is \emph{exactly one} second attribute.)
+    
+    \begin{tcolorbox}[fit,height=2cm,blank, borderline={1pt}{-2pt},nobeforeafter]
+    %Input your solution here.  Do not change any of the specifications of this solution box.
+    \end{tcolorbox}
+    
+    \item If the same algorithm continues until the tree perfectly classifies the data, what would the depth of the tree be?
+
+    \begin{tcolorbox}[fit,height=2cm,blank, borderline={1pt}{-2pt},nobeforeafter]
+    %Input your solution here.  Do not change any of the specifications of this solution box.
+    \end{tcolorbox}
+    
+    \item Draw your completed Decision Tree. Label the non-leaf nodes with which attribute the tree will split on (e.g. $B$), the edges with the value of the attribute (e.g. 1 or 0), and the leaf nodes with the classification decision (e.g. $Y=0$).
+    
+    \begin{tcolorbox}[fit,height=5cm,blank, borderline={1pt}{-2pt},nobeforeafter]
+    %Input your solution here.  Do not change any of the specifications of this solution box.
+    \end{tcolorbox}
+ 
+\end{enumerate}
+
+\subsection{Empirical Questions}
+\label{sec:empirical}
+
+The following questions should be completed as you work through the programming portion of this assignment.
+
+ \begin{enumerate}
+    \item[9.] Train and test your decision tree on the politician dataset and the education dataset with four different values of max-depth, $\{0,1,2,4\}$. Report your findings in the table below. A Decision Tree with max-depth 0 is simply a \emph{majority vote classifier}; a Decision Tree with max-depth 1 is called a \emph{decision stump}. If desired, you could even check that your answers for these two simple cases are correct using your favorite spreadsheet application (e.g. Excel, Google Sheets).
+    
+    \begin{center}
+    \begin{tabular}{cc|c|c}
+        \toprule
+      {\bf Dataset}   & {\bf Max-Depth} & {\bf Train Error} & {\bf Test Error} \\
+      \midrule
+        politician & 0 & & \\
+        politician & 1 & & \\
+        politician & 2 & & \\
+        politician & 4 & & \\
+        \midrule
+        education & 0 & & \\
+        education & 1 & & \\
+        education & 2 & & \\
+        education & 4 & & \\
+        \bottomrule
+    \end{tabular}
+    \end{center}
+    
+    \item[10.] For the politicians dataset, create a plot showing error on the y-axis against depth of the tree on the x-axis. Plot \emph{both} training error and testing error, clearly labeling which is which.  That is, for each possible value of max-depth ($0, 1, 2, \ldots,$ up to the number of attributes in the dataset), you should train a decision tree and report train/test error of the model's predictions.
+    
+
+    \begin{tcolorbox}[fit,height=5cm,blank, borderline={1pt}{-2pt},nobeforeafter]
+    %Input your solution here.  Do not change any of the specifications of this solution box.
+    \end{tcolorbox}
+    
+    \item[11.] Suppose your research advisor asks you to run some model selection experiments and then report your results. You select the Decision Tree model's max-depth to be the one with lowest test error in metrics.txt and then report that model's test error as the performance of our classifier on held out data. Is this a good experimental setup? If so, what is the name for this type of model selection? If not, why not?
+    
+    \begin{tcolorbox}[fit,height=2cm,blank, borderline={1pt}{-2pt},nobeforeafter]
+    %Input your solution here.  Do not change any of the specifications of this solution box.
+    \end{tcolorbox}
+    
+    
+    \item[12.] In this assignment, we used max-depth as our stopping criterion, and as a mechanism to prevent overfitting. Alternatively, we could stop splitting a node whenever the mutual information for the best attribute is lower than a threshold value. This threshold would be another hyperparameter. How would this threshold value affect the number of nodes and depth of the learned trees? In a practical setting, how would you choose this parameter? 
+    
+    \begin{tcolorbox}[fit,height=2cm,blank, borderline={1pt}{-2pt},nobeforeafter]
+    %Input your solution here.  Do not change any of the specifications of this solution box.
+    \end{tcolorbox}
+    
+    \item[13.] Print the decision tree which is produced by your algorithm for the politician data with max depth 3. Instructions on how to print the tree could be found in the HW2 writeup.
+
+    \begin{tcolorbox}[fit,height=5cm,blank, borderline={1pt}{-2pt},nobeforeafter]
+    %Input your solution here.  Do not change any of the specifications of this solution box.
+    \end{tcolorbox}
+
+    \item[14.] After you have completed all other components of this assignment, report your answers to the collaboration policy questions detailed in the Academic Integrity Policies found \href{http://www.cs.cmu.edu/~mgormley/courses/10601-s18/about.html#7-academic-integrity-policies}{here}.
+    \begin{enumerate*}
+        \item Did you receive any help whatsoever from anyone in solving this assignment? Is so, include full details.
+        \item Did you give any help whatsoever to anyone in solving this assignment? Is so, include full details?
+        \item Did you find or come across code that implements any part of this assignment ? If so, include full details.
+    \end{enumerate*}
+    
+    \begin{tcolorbox}[fit,height=3cm,blank, borderline={1pt}{-2pt},nobeforeafter]
+    %Input your solution here.  Do not change any of the specifications of this solution box.
+    \end{tcolorbox}
+    
+\end{enumerate}
+

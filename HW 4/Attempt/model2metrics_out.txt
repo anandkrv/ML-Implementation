@@ -1,0 +1,22 @@
+epoch=1 likelihood(train): 0.226935803735
+epoch=1 likelihood(validation): 0.249913365438
+epoch=2 likelihood(train): 0.141171792888
+epoch=2 likelihood(validation): 0.180834619891
+epoch=3 likelihood(train): 0.105553569245
+epoch=3 likelihood(validation): 0.158881643506
+epoch=4 likelihood(train): 0.0875326163769
+epoch=4 likelihood(validation): 0.14886015821
+epoch=5 likelihood(train): 0.0768907172147
+epoch=5 likelihood(validation): 0.143155741285
+epoch=6 likelihood(train): 0.0698167691527
+epoch=6 likelihood(validation): 0.139446032052
+epoch=7 likelihood(train): 0.0651095923027
+epoch=7 likelihood(validation): 0.137185535829
+epoch=8 likelihood(train): 0.0618671337978
+epoch=8 likelihood(validation): 0.135828379262
+epoch=9 likelihood(train): 0.0594856546556
+epoch=9 likelihood(validation): 0.134996326379
+epoch=10 likelihood(train): 0.0576595139099
+epoch=10 likelihood(validation): 0.134500190336
+error(train): 0.018433179723502304
+error(test): 0.055495103373231776
